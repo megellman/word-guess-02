@@ -4,12 +4,19 @@ var wordBank = ['river', 'mountain', 'sunshine', 'whisper', 'galaxy', 'sparkle',
 
 startBtn.addEventListener('click', function(){
     startBtn.style.visibility = 'hidden';
+
     var gameContainer = document.createElement('div');
     document.body.append(gameContainer);
-    gameContainer.setAttribute('style', 'width:100%')
+    gameContainer.setAttribute('id', 'game-container')
+
     var displayContainer = document.createElement('div');
     displayContainer.setAttribute('id', 'display-container');
     gameContainer.append(displayContainer);
+    
+    var letterBank = document.createElement('div');
+    letterBank.setAttribute('id', 'letter-bank')
+    gameContainer.append(letterBank);
+
     var wordAnswer = generateWord();
     for(var i = 0; i < wordAnswer.length; i++){
         var wordDisplay = document.createElement('h1');
@@ -22,12 +29,25 @@ startBtn.addEventListener('click', function(){
         wordDisplay.setAttribute('class', 'word-display');
         letterDiv.setAttribute('class', 'letter-div');
 
-        console.log(wordDisplay);
     }
+    generateLetterBox(letterBank)
 })
 
 function generateWord(){
     var word = wordBank[Math.floor(Math.random() * 100)];
     console.log(word);
     return word
+}
+
+function generateLetterBox(letterBank){
+    var alphabetArr = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+
+    for(var i = 0; i < alphabetArr.length; i++){
+        var letter = document.createElement('h2');
+        letter.setAttribute('class', 'letter');
+        letter.textContent = alphabetArr[i];
+        console.log(letter)
+        letter.style.display = 'inline';
+        letterBank.append(letter)
+    }
 }

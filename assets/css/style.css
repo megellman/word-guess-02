@@ -42,3 +42,23 @@ body {
     border-bottom: solid black 5px; 
     width: 50%;
 }
+
+#letter-bank{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    row-gap: 40px;
+    width: 60%;
+    margin: auto;
+    font-size: 3em;
+}
+
+#game-container{
+    height: 100vh;
+    width: 100%;
+}
+
+.letter{
+    margin: 0 50px;
+}
