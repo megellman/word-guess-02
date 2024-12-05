@@ -3,6 +3,13 @@ var startBtn = document.querySelector('#start-btn');
 var wordBank = ['river', 'mountain', 'sunshine', 'whisper', 'galaxy', 'sparkle', 'echo', 'twilight', 'breeze', 'harmony', 'adventure', 'serenity', 'journey', 'mystery', 'enigma', 'essence', 'fusion', 'glimmer', 'wonder', 'tranquility', 'radiance', 'cascade', 'meadow', 'forest', 'horizon', 'illusion', 'crystal', 'ripple', 'whirlwind', 'ember', 'solstice', 'mirage', 'glow', 'whimsy', 'enchantment', 'voyage', 'odyssey', 'reverie', 'miracle', 'dawn', 'tempest', 'serendipity', 'fantasy', 'infinity', 'labyrinth', 'paradise', 'zephyr', 'symphony', 'echoes', 'aurora', 'starlight', 'ebony', 'sapphire', 'emerald', 'nectar', 'tapestry', 'illusion', 'epiphany', 'marvel', 'revelation', 'ephemeral', 'charm', 'whispering', 'luminescence', 'melody', 'journey', 'elegance', 'grace', 'allure', 'mystique', 'captivate', 'poise', 'splendor', 'magnificence', 'enigma', 'tranquil', 'celestial', 'ethereal', 'arcane', 'vortex', 'kaleidoscope', 'quintessential', 'halcyon', 'luminous', 'inspiration', 'profound', 'whisper', 'radiant', 'resonance', 'wonder', 'solitude', 'panorama', 'harmony', 'timeless', 'infinitesimal'];
 
 startBtn.addEventListener('click', function(){
+    if(document.querySelector('#time-up-msg')){
+
+        var timeUp = document.querySelector('#time-up-msg');
+        if(timeUp.style.visibility = 'visible'){
+           timeUp.style.visibility = 'hidden'
+        }
+    }
     startBtn.style.visibility = 'hidden';
 
     var gameContainer = document.createElement('div');
@@ -64,4 +71,23 @@ function generateLetterBox(letterBank){
     }
 }
 
+var timer = document.querySelector('#timer');
+var time = 2;
 
+setInterval(() => {
+    time--;
+    timer.textContent = `${time}s`;
+    if(time === 0){
+        timer.style.display = 'none';
+        document.querySelector('#game-container').style.display = 'none';
+
+        var gameOver = document.createElement('h1');
+        gameOver.textContent = 'Times up! Play Again?';
+        gameOver.setAttribute('id', 'time-up-msg');
+        
+       startBtn.textContent = 'Play Again';
+       startBtn.style.visibility = 'visible';
+        document.body.append(gameOver)
+        clearInterval();
+    }
+}, 1000)
