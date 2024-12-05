@@ -34,6 +34,8 @@ body {
 .word-display{
     display: inline;
     visibility: hidden;
+    font-size: 6em;
+    text-align: center;
 }
 
 .letter-div{
@@ -51,7 +53,7 @@ body {
     row-gap: 40px;
     width: 60%;
     margin: auto;
-    font-size: 3em;
+    font-size: 2.5em;
 }
 
 #game-container{

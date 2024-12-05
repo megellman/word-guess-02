@@ -39,15 +39,26 @@ function generateWord(){
     return word
 }
 
-function generateLetterBox(letterBank){
+function generateLetterBox(letterBank, wordDisplay){
     var alphabetArr = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 
     for(var i = 0; i < alphabetArr.length; i++){
         var letter = document.createElement('h2');
         letter.setAttribute('class', 'letter');
         letter.textContent = alphabetArr[i];
-        console.log(letter)
         letter.style.display = 'inline';
+        letter.addEventListener('click', function(e){
+            console.log(e.target.textContent)
+            var hiddenLetters = document.querySelectorAll('.word-display');
+            var hiddenLetterDivs = document.querySelectorAll('.letter-div');
+            for(var i = 0; i < hiddenLetters.length; i++){
+                if(hiddenLetters[i].textContent == e.target.textContent){
+                    hiddenLetters[i].style.visibility = 'visible';
+                    hiddenLetterDivs[i].style.borderBottom = 'none';
+                }
+            }
+        });
         letterBank.append(letter)
     }
 }
+
