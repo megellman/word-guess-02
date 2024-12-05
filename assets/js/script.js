@@ -39,7 +39,7 @@ function generateWord(){
     return word
 }
 
-function generateLetterBox(letterBank, wordDisplay){
+function generateLetterBox(letterBank){
     var alphabetArr = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 
     for(var i = 0; i < alphabetArr.length; i++){
@@ -55,10 +55,13 @@ function generateLetterBox(letterBank, wordDisplay){
                 if(hiddenLetters[i].textContent == e.target.textContent){
                     hiddenLetters[i].style.visibility = 'visible';
                     hiddenLetterDivs[i].style.borderBottom = 'none';
+                    e.target.style.display = 'none';
+
                 }
             }
         });
-        letterBank.append(letter)
+        letterBank.append(letter);
     }
 }
+
 
