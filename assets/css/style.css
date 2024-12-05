@@ -24,3 +24,21 @@ body {
     border: 5px solid #4f4977;
     border-radius: 10px;
 }
+
+#display-container{
+    width: 50%;
+    margin: 10% auto; 
+    display:flex;
+}
+
+.word-display{
+    display: inline;
+    visibility: hidden;
+}
+
+.letter-div{
+    display: inline; 
+    margin: 0 20px; 
+    border-bottom: solid black 5px; 
+    width: 50%;
+}
