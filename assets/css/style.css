@@ -9,7 +9,7 @@ body {
     background-color: var(--gray);
 }
 
-#start-btn {
+.game-btn {
     width: 300px;
     margin: auto;
     background-color: var(--purple);
