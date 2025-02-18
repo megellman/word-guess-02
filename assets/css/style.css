@@ -26,8 +26,9 @@ body {
 }
 
 #display-container{
-    width: 50%;
-    margin: 200px auto 150px; 
+    width: auto;
+    margin: 200px auto 150px;
+    height: 100px; 
     display:flex;
 }
 
