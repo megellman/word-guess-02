@@ -4,7 +4,7 @@ var startBtn = document.querySelector('#start-btn');
 startBtn.addEventListener('click', playGame);
 
 var timer = document.querySelector('#timer');
-var time = 10;
+var time = 120;
 
 function playGame() {
     // timer function displays time and once reached 0, clears the timer function and runs the timesUp function
@@ -15,7 +15,7 @@ function playGame() {
         if (time === 0) {
             clearInterval(countdown);
             // reset timer
-            time = 10;
+            time = 120;
             timesUp();
         }
     }, 1000);
