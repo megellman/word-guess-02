@@ -4,7 +4,9 @@
     --green: #c1ffbe;
     --yellow: #facb86;
 }
-
+* {
+    color: var(--purple);
+}
 body {
     background-color: var(--gray);
 }
@@ -26,9 +28,7 @@ body {
 }
 
 #display-container{
-    width: auto;
-    margin: 200px auto 150px;
-    height: 100px; 
+    margin: 200px auto 150px; 
     display:flex;
 }
 
@@ -41,7 +41,7 @@ body {
 .letter-div{
     display: inline; 
     margin: 0 20px; 
-    border-bottom: solid black 5px; 
+    border-bottom: solid var(--purple) 5px; 
     width: 50%;
 }
 
@@ -50,14 +50,10 @@ body {
     flex-wrap: wrap;
     justify-content: start;
     row-gap: 40px;
-    /* width: 60%; */
-    /* margin: auto; */
     font-size: 2.5em;
 }
 
 #game-container{
-    height: 100vh;
-    width: 100%;
     padding: 0 50px;
 }
 
@@ -67,9 +63,8 @@ body {
 
 #time-up-msg {
     position: absolute;
-    height: 100px;
-    font-size: 3.2em;
-    top: 30%;
+    font-size: 10em;
+    top: 20%;
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -70%);
